@@ -20,13 +20,15 @@
         <!-- <p>[Insert question content here]</p>
 
         <p>[See <a href="https://design-system.service.gov.uk">the GOV.UK Design System</a> for examples]</p> -->
+        
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <!-- <h1 class="govuk-fieldset__heading">
                 Where do you live?
               </h1> -->
-              <h1 class="govuk-heading-xl">How many balls can you juggle?</h1>
+               <img src="/public/images/juggling_balls.png" alt="Clock"></img>
+              <h1 class="govuk-heading-l">How many balls can you juggle?</h1>
             </legend>
             <div class="govuk-radios">
               <div class="govuk-radios__item">
@@ -51,6 +53,38 @@
         
           </fieldset>
         </div>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "where-do-you-live",
+  name: "where-do-you-live",
+  fieldset: {
+    legend: {
+      text: "Where do you reside?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "england",
+      text: "England"
+    },
+    {
+      value: "scotland",
+      text: "Scotland"
+    },
+    {
+      value: "wales",
+      text: "Wales"
+    },
+    {
+      value: "northern-ireland",
+      text: "Northern Ireland"
+    }
+  ]
+}) }}
 
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>

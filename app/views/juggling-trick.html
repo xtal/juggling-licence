@@ -17,9 +17,18 @@
 
       <form class="form" action="/check-your-answers" method="post">
        
-        
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "Help with tricks",
+  text: "We need to know what you would consider your best trick currently."
+}) }}  
+
+    <img src="/public/images/magic_trick3.png" alt="Magic Hat"></img>
 <!-- 
         <p>[Insert question content here]</p>
+        
+
 
         <p>[See <a href="https://design-system.service.gov.uk">the GOV.UK Design System</a> for examples]</p> -->
         <div class="govuk-form-group">
@@ -32,6 +41,22 @@
           </div> -->
           <textarea class="govuk-textarea" id="more-detail" name="most-impressive-trick" rows="5" aria-describedby="most-impressive-trick-hint">{{ data['most-impressive-trick'] }}</textarea>
         </div>
+
+
+
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      Hopefully this will be the most amazing spectale anyone has ever seen.
+      <a class="govuk-notification-banner__link" href="#">Some example amazing spectacles.</a>.
+    </p>
+  </div>
+</div>  
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
